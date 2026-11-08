@@ -1,0 +1,9 @@
+{
+  "name": "clickcircuits",
+  "version": "1.0.0",
+  "description": "ClickCircuits static website",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve . -l 3000"
+  }
+}
