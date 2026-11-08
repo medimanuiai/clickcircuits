@@ -1,0 +1,53 @@
+# Deploys the static site to Hostinger over FTP/SFTP after a merge to main.
+#
+# OFF BY DEFAULT. It does nothing until BOTH are configured in
+# GitHub -> Settings -> Secrets and variables -> Actions:
+#   Variable : DEPLOY_ENABLED = true
+#   Secrets  : FTP_SERVER, FTP_USERNAME, FTP_PASSWORD  (from Hostinger hPanel -> Files -> FTP Accounts)
+#   Variable (optional): FTP_SERVER_DIR  (default "public_html/")
+# See docs/DEPLOYMENT.md.
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: ${{ vars.DEPLOY_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate before publishing
+        run: node scripts/check-site.mjs
+      - name: Upload site to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/' }}
+          # Never uploads repo tooling; only adds/updates site files (no clean slate).
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            scripts/**
+            docs/**
+            README.md
+            CLAUDE.md
+            package.json
+            package-lock.json
+            node_modules/**
