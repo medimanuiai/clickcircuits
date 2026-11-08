@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact — Click Circuits</title>
+<meta name="description" content="The impact Click Circuits is making by bringing Arduino and electronics to students.">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-bar">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Click Circuits Logo" class="brand-logo" loading="lazy">
+      <span class="brand-name">Click<strong>Circuits</strong></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Our Founder</a>
+      <a href="impact.html" aria-current="page">Our Impact</a>
+      <a href="donate.html">Donate A Kit</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Impact -->
+  <section class="section impact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Impact</h2>
+        <p class="section-sub">Engineering access, measured in students reached.</p>
+      </div>
+      <div class="stats-grid impact-stats">
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Free to participating students</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Arduino</span>
+          <span class="stat-label">Core platform we teach on</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Hands‑on</span>
+          <span class="stat-label">Every session, real components</span>
+        </div>
+      </div>
+      <p>Click Circuits partners with schools and community programs to put real circuit boards, sensors, and code in front of students who wouldn't otherwise have that chance. We started this initiative in the summer of 2023, running sessions in libraries, community centers, and even in our garage—wherever there's a student curious about engineering. Every session is measured by one thing: did a student build something themselves. From local students in our community to young engineers in India, we're working to bring real opportunities to anyone who wants to discover what they can create.</p>
+    </div>
+  </section>
+
+  <!-- Impact highlights -->
+  <section class="section section-alt impact-highlights">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Growing Impact</h2>
+      </div>
+      <div class="impact-wrapper">
+        <div class="impact-logo">
+          <img src="images/arduino.jpg" alt="Students building circuits" class="impact-img" loading="lazy"
+               onerror="this.onerror=null;this.src='images/logo.png';this.alt='Click Circuits Logo';this.classList.add('img-missing')">
+        </div>
+        <div class="impact-content">
+          <p>Over 175 students have participated in Click Circuits sessions and built their first projects with real Arduino boards and sensors.</p>
+          <p>We partner directly with libraries, parents, and community programs that serve students with limited access to STEM resources, bringing hands-on learning where it's needed most.</p>
+          <p>Every student gets real components—Arduino boards, sensors, and circuits—not simulations. They learn to build, code, and debug actual electrical systems.</p>
+          <p>Students walk away with lasting skills and the confidence that they can create engineering solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact videos -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Hear from our students!</h2>
+        <p class="section-sub">Use the <kbd>←</kbd> and <kbd>→</kbd> arrow keys to move between videos.</p>
+      </div>
+
+      <div class="video-player" id="impactVideoPlayer" tabindex="0" aria-label="Impact video player, use left and right arrow keys to change video">
+        <button class="video-nav prev" id="impactVideoPrev" aria-label="Previous video">‹</button>
+
+        <div class="video-stage">
+          <div class="video-frame">
+            <video id="impactVideoEl" controls playsinline muted></video>
+            <span class="video-pause-icon" id="impactVideoPauseIcon" aria-hidden="true" hidden></span>
+          </div>
+          <p class="video-empty" id="impactVideoEmpty" hidden>No videos yet. Add files to <code>videos/impact/</code>.</p>
+          <p class="video-caption" id="impactVideoCaption"></p>
+          <p class="video-count" id="impactVideoCount"></p>
+        </div>
+
+        <button class="video-nav next" id="impactVideoNext" aria-label="Next video">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section impact-cta">
+    <div class="container impact-cta-inner">
+      <div>
+        <h2>Bring Click Circuits to your students</h2>
+        <p>Schools, community centers, and after-school programs — reach out to set up a session.</p>
+      </div>
+      <a class="btn btn-primary" href="contact.html">Contact us</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Click Circuits. A nonprofit bringing engineering to every student.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

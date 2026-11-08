@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Click Circuits — Engineering Access for Every Student</title>
+<meta name="description" content="Click Circuits brings Arduino, robotics, and electronics to students without direct access to hands-on engineering.">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-bar">
+    <a href="#top" class="brand">
+      <img src="images/logo.png" alt="Click Circuits Logo" class="brand-logo" loading="lazy">
+      <span class="brand-name">Click<strong>Circuits</strong></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About Our Founder</a>
+      <a href="impact.html">Our Impact</a>
+      <a href="donate.html">Donate A Kit</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Nonprofit · STEM Access</p>
+        <h1>Engineering shouldn't require a head start.</h1>
+        <p class="lead"><strong class="brand-text">Click Circuits</strong> brings Arduino kits, robotics, and hands-on electronics to students who don't have direct access to them — so curiosity is the only requirement.</p>
+        <div class="hero-actions">
+          <a href="#work-videos" class="btn btn-primary">Watch students build</a>
+          <a href="#about" class="btn btn-ghost">Our mission</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="images/arduino.jpg" alt="Arduino board used in Click Circuits sessions" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate a kit -->
+  <section id="donate" class="section section-alt donate-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Donate a Kit</h2>
+      </div>
+      <div class="donate-copy">
+        <p>Your donation of a new or gently used Arduino kit helps students get hands-on experience with real components. Kits typically include a microcontroller board (Arduino Uno or compatible), USB cable, breadboard, jumper wires, LEDs, resistors, and basic sensors.</p>
+        <p>If you'd like to donate a kit, please <a class="btn btn-primary" href="donate.html">visit our Donate page</a> to see how to send a kit or contact us.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Impact banner -->
+  <section class="impact-banner">
+    <div class="container">
+      <div class="banner-stats">
+        <div class="banner-stat">
+          <span class="banner-num">175+</span>
+          <span class="banner-label">Young engineers</span>
+        </div>
+        <div class="banner-stat">
+          <span class="banner-num">2</span>
+          <span class="banner-label">Continents reached</span>
+        </div>
+        <div class="banner-stat">
+          <span class="banner-num">74</span>
+          <span class="banner-label">Boards deployed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about section">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <div class="about-photo-frame">
+          <span class="frame-corner tl"></span>
+          <span class="frame-corner tr"></span>
+          <span class="frame-corner bl"></span>
+          <span class="frame-corner br"></span>
+          <img src="images/founder-selfie.jpeg" alt="Founder of Click Circuits" width="480" height="480" loading="lazy"
+               onerror="this.onerror=null;this.src='';this.alt='Add your photo at images/founder-selfie.jpeg';this.classList.add('img-missing')">
+        </div>
+        <p class="about-photo-caption">Amshul Medisetti</p>
+      </div>
+      <div class="about-copy">
+        <h2>Our Mission</h2>
+        <p>We believe every student should have the opportunity to discover the world of electrical engineering.</p>
+        <p>For many students, the opportunity to explore engineering is limited by the cost of parts, equipment, and educational resources. <strong>Amshul Medisetti</strong> founded this initiative to help bridge that gap, bringing electrical engineering directly to underserved communities.</p>
+        <p>Through free Arduino kits and hands-on lessons in circuits, sensors, and robotics, we want to give students the chance to experience engineering for themselves. Our goal is to make learning accessible, encourage curiosity, and hopefully spark an interest in engineering that students can carry with them into the future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student work videos -->
+  <!-- Photo grid -->
+  <section id="work-photos" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Moments from the workbench</h2>
+      </div>
+      <div class="photo-strip" id="photoStrip" aria-label="Photo gallery"></div>
+    </div>
+  </section>
+
+  <!-- Student work videos -->
+  <section id="work-videos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Students at work</h2>
+        <p class="section-sub">Use the <kbd>←</kbd> and <kbd>→</kbd> arrow keys to move between videos.</p>
+      </div>
+
+      <div class="video-player" id="videoPlayer" tabindex="0" aria-label="Student work video player, use left and right arrow keys to change video">
+        <button class="video-nav prev" id="videoPrev" aria-label="Previous video">‹</button>
+
+        <div class="video-stage">
+          <div class="video-frame">
+            <video id="videoEl" controls playsinline muted></video>
+            <span class="video-pause-icon" id="videoPauseIcon" aria-hidden="true" hidden></span>
+          </div>
+          <p class="video-empty" id="videoEmpty" hidden>No videos yet. Add files to <code>videos/work/</code>.</p>
+          <p class="video-caption" id="videoCaption"></p>
+          <p class="video-count" id="videoCount"></p>
+        </div>
+
+        <button class="video-nav next" id="videoNext" aria-label="Next video">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact CTA -->
+  <section class="section section-alt impact-cta">
+    <div class="container impact-cta-inner">
+      <div>
+        <h2>See the impact behind these moments</h2>
+        <p>Every photo and video above comes from a real session. See the reach, the numbers, and the story of what Click Circuits is building.</p>
+      </div>
+      <a class="btn btn-primary" href="impact.html">See our impact</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Click Circuits. A nonprofit bringing engineering to every student.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
