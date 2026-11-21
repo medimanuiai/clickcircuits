@@ -1,4 +1,4 @@
-/* Click Circuits — site behavior: nav toggle, video keyboard nav, photo grid */
+/* Click Circuits, site behavior: nav toggle, video keyboard nav, photo grid */
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -199,3 +199,129 @@ if (photoStrip) {
   });
 })();
 
+
+/* ---------- Events (single source of truth) ----------
+   Edit this list to add or change events. Cards on the Home and Talks & Events
+   pages and the Register form are all built from it. Dates are YYYY-MM-DD. */
+const CONTACT_EMAIL = 'rovimrboss237@gmail.com';
+const EVENTS = [
+  { id: 'workshop-2026-11-28', date: '2026-11-28', type: 'Workshop', title: 'Hands-on Arduino Workshop',
+    place: 'Coimbatore, Tamil Nadu', note: 'Venue shared on registration' },
+  { id: 'talk-2026-12-04', date: '2026-12-04', type: 'Talk', title: 'AI Talk: Why It Matters and How to Build With It',
+    place: 'Coimbatore, Tamil Nadu', note: 'Venue shared on registration' },
+  { id: 'workshop-2026-12-15', date: '2026-12-15', type: 'Workshop', title: 'Hands-on Arduino Workshop',
+    place: 'Coimbatore, Tamil Nadu', note: 'Venue shared on registration' },
+];
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+function eventDate(ev) {
+  const [y, m, d] = ev.date.split('-').map(Number);
+  return new Date(y, m - 1, d);
+}
+function upcomingEvents() {
+  const startOfToday = new Date();
+  startOfToday.setHours(0, 0, 0, 0);
+  return EVENTS.filter((ev) => eventDate(ev) >= startOfToday);
+}
+function longDate(ev) {
+  const d = eventDate(ev);
+  return `${WEEKDAYS[d.getDay()]}, ${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+}
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+document.querySelectorAll('[data-events]').forEach((grid) => {
+  const list = upcomingEvents();
+  if (!list.length) {
+    grid.innerHTML = `<p class="events-empty">New dates are coming soon. <a href="contact.html">Contact us</a> to hear first.</p>`;
+    return;
+  }
+  grid.innerHTML = list.map((ev) => {
+    const d = eventDate(ev);
+    const kind = ev.type.toLowerCase();
+    return `
+      <article class="event-card event-card--${kind}">
+        <div class="event-card-top">
+          <div class="event-date" aria-hidden="true">
+            <span class="m">${MONTHS[d.getMonth()]}</span>
+            <span class="d">${d.getDate()}</span>
+          </div>
+          <span class="event-tag event-tag--${kind}">${escapeHtml(ev.type)}</span>
+        </div>
+        <div class="event-card-body">
+          <h3>${escapeHtml(ev.title)}</h3>
+          <p class="event-meta"><strong>${longDate(ev)}</strong></p>
+          <p class="event-meta">${escapeHtml(ev.place)}</p>
+          <p class="event-meta event-note">${escapeHtml(ev.note)}</p>
+          <a class="btn btn-primary" href="register.html?event=${encodeURIComponent(ev.id)}">Register</a>
+        </div>
+      </article>`;
+  }).join('');
+});
+
+/* ---------- Register form ----------
+   No server: submitting opens the visitor's email app with the details filled in. */
+(function setupRegister() {
+  const form = document.getElementById('registerForm');
+  if (!form) return;
+  const select = document.getElementById('eventSelect');
+  const list = upcomingEvents();
+  const wanted = new URLSearchParams(location.search).get('event');
+
+  if (!list.length) {
+    select.innerHTML = '<option value="">No upcoming events right now</option>';
+  } else {
+    select.innerHTML = list.map((ev) =>
+      `<option value="${ev.id}"${ev.id === wanted ? ' selected' : ''}>${escapeHtml(ev.type)}: ${longDate(ev)}, ${escapeHtml(ev.place)}</option>`
+    ).join('');
+  }
+
+  const confirmBox = document.getElementById('registerConfirm');
+  const summary = document.getElementById('registerSummary');
+  const openLink = document.getElementById('registerOpen');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = Object.fromEntries(new FormData(form).entries());
+    const ev = EVENTS.find((x) => x.id === data.event);
+    if (!ev) return;
+
+    const lines = [
+      `Event: ${ev.title} (${ev.type})`,
+      `Date: ${longDate(ev)}`,
+      `Location: ${ev.place}`,
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone || 'not given'}`,
+      `Role: ${data.role}`,
+      `People attending: ${data.count}`,
+      `Notes: ${data.notes || 'none'}`,
+    ];
+    const text = lines.join('\n');
+    const subject = `Registration: ${ev.type} on ${longDate(ev)}`;
+    const href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+
+    summary.textContent = text;
+    openLink.href = href;
+    form.hidden = true;
+    confirmBox.hidden = false;
+    confirmBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.location.href = href;
+  });
+
+  const copyBtn = document.getElementById('registerCopy');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(summary.textContent).then(() => {
+          copyBtn.textContent = 'Copied';
+          setTimeout(() => { copyBtn.textContent = 'Copy details'; }, 1400);
+        }).catch(() => {});
+      }
+    });
+  }
+})();

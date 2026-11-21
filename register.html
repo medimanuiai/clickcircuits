@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register | Click Circuits</title>
+<meta name="description" content="Register for a Click Circuits workshop or talk in Coimbatore, Tamil Nadu.">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>Free Arduino and AI education for students in India and the USA</span>
+    <a href="mailto:rovimrboss237@gmail.com">rovimrboss237@gmail.com</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-bar">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Click Circuits Logo" class="brand-logo" loading="lazy">
+      <span class="brand-name">Click<strong>Circuits</strong></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Our Founder</a>
+      <a href="speaking.html">Talks &amp; Events</a>
+      <a href="impact.html">Our Impact</a>
+      <a href="donate.html">Donate A Kit</a>
+      <a href="contact.html">Contact Us</a>
+      <a class="btn btn-warm nav-cta" href="register.html" aria-current="page">Register</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow-light">Register</p>
+      <h1>Reserve your spot</h1>
+      <p>Choose an event in Coimbatore, Tamil Nadu and tell us a little about you. We will confirm by email.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container reg-grid">
+      <div class="form-card">
+        <form id="registerForm" novalidate>
+          <div class="field">
+            <label for="eventSelect">Event</label>
+            <select id="eventSelect" name="event" required></select>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="regName">Full name</label>
+              <input id="regName" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="regEmail">Email</label>
+              <input id="regEmail" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="regPhone">Phone (optional)</label>
+              <input id="regPhone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="regRole">I am a</label>
+              <select id="regRole" name="role">
+                <option>Student</option>
+                <option>Parent or guardian</option>
+                <option>Teacher or school representative</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="regCount">Number of people attending</label>
+            <input id="regCount" name="count" type="number" min="1" max="50" value="1" required>
+          </div>
+          <div class="field">
+            <label for="regNotes">Anything we should know? (optional)</label>
+            <textarea id="regNotes" name="notes" rows="3"></textarea>
+          </div>
+          <button class="btn btn-warm" type="submit">Register</button>
+          <p class="form-note">Submitting opens an email to Click Circuits in your email app with your details filled in. Press send there to complete your registration.</p>
+        </form>
+
+        <div class="reg-confirm" id="registerConfirm" hidden>
+          <h3>One last step</h3>
+          <p>Your email app should have opened with your registration filled in. Press send to complete it. If nothing opened, copy the details below and email them to <a href="mailto:rovimrboss237@gmail.com">rovimrboss237@gmail.com</a>.</p>
+          <pre id="registerSummary" class="reg-summary"></pre>
+          <p>
+            <button class="btn btn-ghost" type="button" id="registerCopy">Copy details</button>
+            <a class="btn btn-primary" id="registerOpen" href="#">Open email app</a>
+          </p>
+        </div>
+      </div>
+
+      <aside class="reg-side">
+        <h3>What to expect</h3>
+        <p>Workshops are hands-on: students build real circuits with Arduino boards and sensors. Talks cover why AI matters and how to start building with it.</p>
+        <h3>Questions?</h3>
+        <p>Write to <a href="mailto:rovimrboss237@gmail.com">rovimrboss237@gmail.com</a> or visit the <a href="contact.html">contact page</a>.</p>
+        <h3>Want a talk at your school?</h3>
+        <p><a href="speaking.html">See how to book a talk</a>.</p>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Click Circuits Logo" class="brand-logo" loading="lazy">
+        <span class="brand-name">Click<strong>Circuits</strong></span>
+      </a>
+      <p>An initiative bringing engineering and AI to every student.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Our Founder</a>
+      <a href="impact.html">Our Impact</a>
+    </div>
+    <div>
+      <h4>Get involved</h4>
+      <a href="register.html">Register for an event</a>
+      <a href="speaking.html">Book a talk</a>
+      <a href="donate.html">Donate a kit</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:rovimrboss237@gmail.com">rovimrboss237@gmail.com</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Click Circuits. An initiative bringing engineering and AI to every student.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
