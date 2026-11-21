@@ -42,8 +42,24 @@ for (const page of pages) {
   }
 }
 
-if (!existsSync(join(root, 'js/viewer3d.js'))) err('missing js/viewer3d.js');
-else if (/[—–]/.test(readFileSync(join(root, 'js/viewer3d.js'), 'utf8'))) err('js/viewer3d.js: contains an em or en dash');
+// The viewer is split across four files; viewer3d.js loads the other three itself.
+for (const f of ['js/viewer3d.js', 'js/viewer-kit.js', 'js/viewer-arduino.js', 'js/viewer-parts.js']) {
+  if (!existsSync(join(root, f))) err(`missing ${f}`);
+  else if (new RegExp("[" + String.fromCharCode(0x2014, 0x2013) + "]").test(readFileSync(join(root, f), 'utf8'))) err(`${f}: contains an em or en dash`);
+}
+
+// Search engines: every page needs a robots meta tag, and the sitemap must list every page.
+for (const page of pages) {
+  const html = readFileSync(join(root, page), 'utf8');
+  if (!/<meta name="robots" content="index, follow/.test(html)) err(`${page}: missing robots meta tag`);
+}
+if (existsSync(join(root, 'sitemap.xml'))) {
+  const sitemap = readFileSync(join(root, 'sitemap.xml'), 'utf8');
+  for (const page of pages) {
+    const loc = page === 'index.html' ? 'https://clickcircuits.org/</loc>' : `https://clickcircuits.org/${page}</loc>`;
+    if (!sitemap.includes(loc)) err(`sitemap.xml: missing ${page}`);
+  }
+} else err('missing sitemap.xml');
 
 // Icon files must exist at the site root (Google looks for a square icon of at least 48x48).
 for (const f of ['favicon.ico', 'favicon.svg', 'favicon-48.png', 'favicon-192.png', 'apple-touch-icon.png', 'site.webmanifest']) {
