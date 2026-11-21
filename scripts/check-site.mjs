@@ -24,9 +24,27 @@ for (const page of pages) {
   const dup = ids.filter((id, i) => ids.indexOf(id) !== i);
   if (dup.length) err(`${page}: duplicate ids ${[...new Set(dup)].join(', ')}`);
   if (!/<title>[^<]+<\/title>/.test(html)) err(`${page}: missing <title>`);
+  if (!/<meta name="description" content="[^"]+"/.test(html)) err(`${page}: missing meta description`);
+  if (!/<link rel="canonical" href="https:\/\/clickcircuits\.org\//.test(html)) err(`${page}: missing canonical link`);
+  if (/[\u2014\u2013]/.test(html)) err(`${page}: contains an em or en dash`);
+  for (const m of html.matchAll(/<img\b[^>]*>/g)) {
+    if (!/\balt=/.test(m[0])) err(`${page}: image without alt text: ${m[0].slice(0, 70)}`);
+  }
+  const h1s = (html.match(/<h1\b/g) || []).length;
+  if (h1s !== 1) err(`${page}: expected exactly one <h1>, found ${h1s}`);
+}
+
+// Every page should be listed in sitemap.xml.
+if (existsSync(join(root, 'sitemap.xml'))) {
+  const sitemap = readFileSync(join(root, 'sitemap.xml'), 'utf8');
+  for (const page of pages) {
+    const loc = page === 'index.html' ? 'https://clickcircuits.org/<' : `https://clickcircuits.org/${page}<`;
+    if (!sitemap.includes(loc)) err(`sitemap.xml: missing ${page}`);
+  }
 }
 
 const js = readFileSync(join(root, 'js/main.js'), 'utf8');
+if (/[\u2014\u2013]/.test(js)) err('js/main.js: contains an em or en dash');
 for (const m of js.matchAll(/['"`]((?:images|videos)\/[^'"`]+)['"`]/g)) {
   if (!exists(m[1])) err(`js/main.js: missing media file "${m[1]}"`);
 }
