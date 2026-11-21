@@ -110,7 +110,6 @@ setupVideoPlayer({
 /* ---------- Photo grid ----------
    Add files to images/work/ and list them below to show up here. */
 const photos = [
-  { src: 'images/work/work-1.png', alt: 'Students in class' },
   { src: 'images/work/work-2.jpeg', alt: 'Workshop activity' },
   { src: 'images/work/work-3.jpeg', alt: 'Students working' },
   { src: 'images/work/work-4.jpeg', alt: 'Building moment' },

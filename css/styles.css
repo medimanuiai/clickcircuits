@@ -777,7 +777,7 @@ kbd {
 /* ---------- Photo strip ---------- */
 .photo-strip {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-2);
 }
 .photo-strip img {
@@ -949,18 +949,19 @@ h1, h2, h3 { letter-spacing: -0.015em; }
 .site-nav a.nav-cta { color: #fff; padding: 0.55rem 1.3rem; border-bottom: 0; }
 .site-nav a.nav-cta:hover { color: #fff; }
 
-/* Hero: full-width photo with a navy overlay */
+/* Hero: deep navy gradient with the Arduino photo */
 .hero-banner {
   position: relative;
   color: #fff;
-  background: var(--blue-900) url("../images/work/work-1.png") center 30% / cover no-repeat;
+  background:
+    radial-gradient(700px 360px at 90% 0%, rgba(0, 194, 255, 0.22), transparent),
+    linear-gradient(135deg, var(--navy) 0%, var(--blue-900) 55%, var(--blue-700) 100%);
 }
-.hero-banner::before {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(7, 26, 56, 0.94) 0%, rgba(10, 44, 92, 0.82) 48%, rgba(10, 44, 92, 0.3) 100%);
+.hero-banner-inner {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-4); align-items: center;
+  padding-top: 5rem; padding-bottom: 9rem; max-width: var(--max-width);
 }
-.hero-banner-inner { position: relative; padding-top: 6rem; padding-bottom: 9rem; max-width: var(--max-width); }
+.hero-banner .hero-image { box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35), 0 0 0 6px rgba(0, 194, 255, 0.18); }
 .hero-banner h1 { color: #fff; font-size: clamp(2.3rem, 5vw, 3.9rem); line-height: 1.05; max-width: 16ch; margin-bottom: var(--space-2); }
 .eyebrow-light { color: var(--cyan); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: var(--space-1); }
 .lead-light { color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; max-width: 56ch; }
@@ -1080,7 +1081,9 @@ h1, h2, h3 { letter-spacing: -0.015em; }
   .site-nav { width: 100%; justify-content: space-between; gap: 0.5rem !important; flex-wrap: wrap; }
   .site-nav a { font-size: 0.82rem; }
   .brand-name { white-space: nowrap; }
-  .hero-banner-inner { padding-top: 4rem; padding-bottom: 7.5rem; }
+  .hero-banner-inner { grid-template-columns: 1fr; padding-top: 3.5rem; padding-bottom: 7.5rem; }
+  .hero-banner .hero-visual { order: 2; }
+  .hero-banner .hero-image { max-width: 320px; }
   .stat-band { grid-template-columns: repeat(2, 1fr); }
   .stat-item { border-bottom: 1px solid var(--line); }
   .stat-item:nth-child(2n) { border-right: 0; }
