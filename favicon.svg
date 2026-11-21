@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Click Circuits">
+  <circle cx="32" cy="32" r="32" fill="#0A7CFF"/>
+  <g transform="translate(32 32) scale(0.84) translate(-32 -32)">
+    <g fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round">
+      <path d="M23 24H18M24.8 19.8L21.2 16.2M29 18V13M33.2 19.8L36.8 16.2M35 24H40"/>
+    </g>
+    <path d="M29 24V46L34.5 41.5L38.5 51L43 49L39 39.5H46Z" fill="#fff" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/>
+  </g>
+</svg>

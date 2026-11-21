@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register for an Event | Click Circuits</title>
+<meta name="description" content="Register for a Click Circuits workshop or AI talk in Coimbatore, Tamil Nadu. Choose an event and send your details by email.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://clickcircuits.org/register.html">
+<meta name="theme-color" content="#0a7cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Click Circuits">
+<meta property="og:title" content="Register for an Event | Click Circuits">
+<meta property="og:description" content="Register for a Click Circuits workshop or AI talk in Coimbatore, Tamil Nadu. Choose an event and send your details by email.">
+<meta property="og:url" content="https://clickcircuits.org/register.html">
+<meta property="og:image" content="https://clickcircuits.org/images/work/work-5.jpeg">
+<meta property="og:image:alt" content="Students building circuits at a Click Circuits session">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="nav-bar">
+    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
+    <a class="btn btn--primary btn--sm nav-donate-sm" href="donate.html">Donate</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="impact.html">Our Impact</a></li><li><a href="events.html">Events</a></li></ul>
+      <div class="nav-actions">
+        <a class="btn btn--outline btn--sm" href="get-involved.html">Get Involved</a>
+        <a class="btn btn--primary btn--sm" href="donate.html">Donate</a>
+      </div>
+    </nav>
+    <span class="scroll-progress" aria-hidden="true"></span>
+  </div>
+</header>
+<main id="main">
+<section class="page-intro">
+  <div class="container">
+    <p class="eyebrow">Register</p>
+    <h1>Reserve your spot.</h1>
+    <p class="lead">Choose an event in Coimbatore, Tamil Nadu and tell us a little about you. We will confirm by email.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container reg-grid">
+    <div class="form-card reveal">
+      <form id="registerForm" novalidate>
+        <div class="field">
+          <label for="eventSelect">Event</label>
+          <select id="eventSelect" name="event" required></select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="regName">Full name</label>
+            <input id="regName" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="regEmail">Email</label>
+            <input id="regEmail" name="email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="regPhone">Phone (optional)</label>
+            <input id="regPhone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="regRole">I am a</label>
+            <select id="regRole" name="role">
+              <option>Student</option>
+              <option>Parent or guardian</option>
+              <option>Teacher or school representative</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="regCount">Number of people attending</label>
+          <input id="regCount" name="count" type="number" min="1" max="50" value="1" required>
+        </div>
+        <div class="field">
+          <label for="regNotes">Anything we should know? (optional)</label>
+          <textarea id="regNotes" name="notes" rows="3"></textarea>
+        </div>
+        <button class="btn btn--primary" type="submit">Register</button>
+        <p class="form-note">Submitting opens an email to Click Circuits in your email app with your details filled in. Press send there to complete your registration.</p>
+      </form>
+
+      <div class="reg-confirm" id="registerConfirm" tabindex="-1" hidden>
+        <h3>One last step</h3>
+        <p>Your email app should have opened with your registration filled in. Press send to complete it. If nothing opened, copy the details below and email them to <a href="mailto:brijesh.m2026@gmail.com">brijesh.m2026@gmail.com</a>.</p>
+        <pre id="registerSummary" class="reg-summary"></pre>
+        <div class="cluster">
+          <button class="btn btn--outline" type="button" id="registerCopy">Copy details</button>
+          <a class="btn btn--primary" id="registerOpen" href="#">Open email app</a>
+        </div>
+      </div>
+    </div>
+
+    <aside class="reg-side reveal">
+      <div class="media media--4x3"><img src="images/work/work-3.jpeg" alt="Students working on laptops and Arduino circuits around a table" width="1206" height="666" loading="lazy" decoding="async"></div>
+      <h3 style="margin-top:1.5rem">What to expect</h3>
+      <p>Workshops are hands-on: students build real circuits with Arduino boards and sensors. Talks cover why AI matters and how to start building with it.</p>
+      <h3>Questions?</h3>
+      <p>Write to <a href="mailto:brijesh.m2026@gmail.com">brijesh.m2026@gmail.com</a> or visit the <a href="contact.html">contact page</a>.</p>
+      <h3>Want a talk at your school?</h3>
+      <p><a href="events.html#talks">See how to request a talk</a>.</p>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
+      <p>Hands-on engineering, electronics, robotics, and AI education for students in India and the United States.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="impact.html">Our Impact</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get involved</h4>
+      <ul>
+        <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+        <li><a href="get-involved.html#partner">Partner With Us</a></li>
+        <li><a href="donate.html">Donate a Kit</a></li>
+        <li><a href="register.html">Register for an Event</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; <span data-year>2026</span> Click Circuits. All rights reserved.</p>
+      <p><a href="mailto:brijesh.m2026@gmail.com">brijesh.m2026@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
