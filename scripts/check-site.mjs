@@ -24,9 +24,62 @@ for (const page of pages) {
   const dup = ids.filter((id, i) => ids.indexOf(id) !== i);
   if (dup.length) err(`${page}: duplicate ids ${[...new Set(dup)].join(', ')}`);
   if (!/<title>[^<]+<\/title>/.test(html)) err(`${page}: missing <title>`);
+  if (!/<meta name="description" content="[^"]+"/.test(html)) err(`${page}: missing meta description`);
+  if (!/<link rel="canonical" href="https:\/\/clickcircuits\.org\//.test(html)) err(`${page}: missing canonical link`);
+  if (/[\u2014\u2013]/.test(html)) err(`${page}: contains an em or en dash`);
+  for (const m of html.matchAll(/<img\b[^>]*>/g)) {
+    if (!/\balt=/.test(m[0])) err(`${page}: image without alt text: ${m[0].slice(0, 70)}`);
+  }
+  const h1s = (html.match(/<h1\b/g) || []).length;
+  if (h1s !== 1) err(`${page}: expected exactly one <h1>, found ${h1s}`);
+  // Search engines and browsers pick up the site icon from these links.
+  if (!/<link rel="icon" href="\/favicon\.ico"/.test(html)) err(`${page}: missing /favicon.ico icon link`);
+  if (!/<link rel="apple-touch-icon" href="\/apple-touch-icon\.png"/.test(html)) err(`${page}: missing apple-touch-icon link`);
+  // A part viewer needs its script, and every part a button can show needs a photo.
+  if (html.includes('data-viewer')) {
+    if (!/<script src="js\/viewer3d\.js"/.test(html)) err(`${page}: has a part viewer but no js/viewer3d.js script`);
+  }
+  for (const m of html.matchAll(/data-show="([^"]+)"/g)) {
+    if (!existsSync(join(root, `images/parts/${m[1]}.webp`))) err(`${page}: no photo images/parts/${m[1]}.webp for data-show="${m[1]}"`);
+  }
+  // Design rule: flat colors, no gradients in page markup.
+  if (/gradient\(/.test(html)) err(`${page}: uses a CSS gradient (the design uses flat colors only)`);
+}
+
+// Part viewer script.
+if (!existsSync(join(root, 'js/viewer3d.js'))) err('missing js/viewer3d.js');
+else if (new RegExp("[" + String.fromCharCode(0x2014, 0x2013) + "]").test(readFileSync(join(root, 'js/viewer3d.js'), 'utf8'))) err('js/viewer3d.js: contains an em or en dash');
+if (/gradient\(/.test(readFileSync(join(root, 'css/styles.css'), 'utf8'))) err('css/styles.css: uses a gradient (the design uses flat colors only)');
+
+// Search engines: every page needs a robots meta tag, and the sitemap must list every page.
+for (const page of pages) {
+  const html = readFileSync(join(root, page), 'utf8');
+  if (!/<meta name="robots" content="index, follow/.test(html)) err(`${page}: missing robots meta tag`);
+}
+if (existsSync(join(root, 'sitemap.xml'))) {
+  const sitemap = readFileSync(join(root, 'sitemap.xml'), 'utf8');
+  for (const page of pages) {
+    const loc = page === 'index.html' ? 'https://clickcircuits.org/</loc>' : `https://clickcircuits.org/${page}</loc>`;
+    if (!sitemap.includes(loc)) err(`sitemap.xml: missing ${page}`);
+  }
+} else err('missing sitemap.xml');
+
+// Icon files must exist at the site root (Google looks for a square icon of at least 48x48).
+for (const f of ['favicon.ico', 'favicon.svg', 'favicon-48.png', 'favicon-192.png', 'apple-touch-icon.png', 'site.webmanifest']) {
+  if (!existsSync(join(root, f))) err(`missing icon file ${f}`);
+}
+
+// Every page should be listed in sitemap.xml.
+if (existsSync(join(root, 'sitemap.xml'))) {
+  const sitemap = readFileSync(join(root, 'sitemap.xml'), 'utf8');
+  for (const page of pages) {
+    const loc = page === 'index.html' ? 'https://clickcircuits.org/<' : `https://clickcircuits.org/${page}<`;
+    if (!sitemap.includes(loc)) err(`sitemap.xml: missing ${page}`);
+  }
 }
 
 const js = readFileSync(join(root, 'js/main.js'), 'utf8');
+if (/[\u2014\u2013]/.test(js)) err('js/main.js: contains an em or en dash');
 for (const m of js.matchAll(/['"`]((?:images|videos)\/[^'"`]+)['"`]/g)) {
   if (!exists(m[1])) err(`js/main.js: missing media file "${m[1]}"`);
 }

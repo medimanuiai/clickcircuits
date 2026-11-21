@@ -1,6 +1,6 @@
 # ClickCircuits
 
-The ClickCircuits website — a static HTML/CSS/JS site with no build step and no
+The Click Circuits website: a static HTML/CSS/JS site with no build step and no
 backend required.
 
 ## Getting the code
@@ -56,13 +56,20 @@ xdg-open index.html
 ## Project structure
 
 ```
-index.html       Home page
-about.html        About page
-contact.html      Contact page
-donate.html       Donate page
-impact.html       Impact page
-css/              Stylesheets
-js/               Site behavior (nav, video players, photo grid)
-images/           Site images
-videos/           Site videos
+index.html          Home
+about.html          About the founder and the initiative
+programs.html       Workshops, kits, and talks
+impact.html         Numbers, student videos, photos
+events.html         Upcoming events and talks
+get-involved.html   Volunteer, partner, support
+register.html       Event registration (opens an email)
+donate.html         Donate a kit
+contact.html        Contact
+sitemap.xml         Pages for search engines
+robots.txt          Crawler rules
+css/                One stylesheet with the design tokens at the top
+js/                 Menu, motion, video players, events, register form
+images/             Site images (images/posters/ holds video poster frames)
+videos/             Site videos
+scripts/            check-site.mjs, the validator CI runs
 ```

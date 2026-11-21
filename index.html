@@ -2,166 +2,284 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Click Circuits — Engineering Access for Every Student</title>
-<meta name="description" content="Click Circuits brings Arduino, robotics, and electronics to students without direct access to hands-on engineering.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Click Circuits | Helping Students Learn and Build with AI</title>
+<meta name="description" content="Click Circuits is an initiative that teaches students how AI works and how to build with it, through talks, hands-on Arduino workshops, and a learning platform on the way. India and the United States.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://clickcircuits.org/">
+<meta name="theme-color" content="#0a7cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Click Circuits">
+<meta property="og:title" content="Click Circuits | Helping Students Learn and Build with AI">
+<meta property="og:description" content="Click Circuits is an initiative that teaches students how AI works and how to build with it, through talks, hands-on Arduino workshops, and a learning platform on the way. India and the United States.">
+<meta property="og:url" content="https://clickcircuits.org/">
+<meta property="og:image" content="https://clickcircuits.org/images/work/work-5.jpeg">
+<meta property="og:image:alt" content="Students building circuits at a Click Circuits session">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@600;700;800&amp;display=swap">
 <link rel="stylesheet" href="css/styles.css">
-<link rel="icon" type="image/png" href="images/logo.png">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Click Circuits",
+  "url": "https://clickcircuits.org/",
+  "logo": "https://clickcircuits.org/images/logo-512.png",
+  "description": "Click Circuits is an initiative that teaches students how AI works and how to build with it, through talks and hands-on workshops in India and the United States.",
+  "founder": { "@type": "Person", "name": "Brijesh Murugesan" },
+  "email": "brijesh.m2026@gmail.com",
+  "areaServed": ["India", "United States"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Click Circuits",
+  "alternateName": "ClickCircuits",
+  "url": "https://clickcircuits.org/"
+}
+</script>
+<link rel="preload" as="image" href="images/work/work-5.jpeg" fetchpriority="high">
 </head>
 <body>
-
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="container header-bar">
-    <a href="#top" class="brand">
-      <img src="images/logo.png" alt="Click Circuits Logo" class="brand-logo" loading="lazy">
-      <span class="brand-name">Click<strong>Circuits</strong></span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="site-nav" id="siteNav">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">About Our Founder</a>
-      <a href="impact.html">Our Impact</a>
-      <a href="donate.html">Donate A Kit</a>
-      <a href="contact.html">Contact Us</a>
+  <div class="nav-bar">
+    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="40" height="40"><span>Click Circuits</span></a>
+    <a class="btn btn--primary btn--sm nav-donate-sm" href="donate.html">Donate</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <ul class="nav-links"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="impact.html">Impact</a></li><li><a href="events.html">Events</a></li></ul>
+      <div class="nav-actions">
+        <a class="btn btn--outline btn--sm" href="get-involved.html">Get involved</a>
+        <a class="btn btn--primary btn--sm" href="donate.html">Donate</a>
+      </div>
     </nav>
   </div>
 </header>
-
-<main id="top">
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Nonprofit · STEM Access</p>
-        <h1>Engineering shouldn't require a head start.</h1>
-        <p class="lead"><strong class="brand-text">Click Circuits</strong> brings Arduino kits, robotics, and hands-on electronics to students who don't have direct access to them — so curiosity is the only requirement.</p>
-        <div class="hero-actions">
-          <a href="#work-videos" class="btn btn-primary">Watch students build</a>
-          <a href="#about" class="btn btn-ghost">Our mission</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <img src="images/arduino.jpg" alt="Arduino board used in Click Circuits sessions" class="hero-image">
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div>
+      <h1 id="hero-title">Helping the next generation <span class="hl">build with AI.</span></h1>
+      <p class="lead">Click Circuits is an initiative that teaches students how AI works and how to use it. We give talks, run hands-on workshops where students wire and code their own circuits, and are building a learning platform right here on this site.</p>
+      <div class="cluster">
+        <a class="btn btn--primary" href="events.html">Join an event</a>
+        <a class="btn btn--outline" href="get-involved.html#partner">Bring us to your school</a>
       </div>
     </div>
-  </section>
+    <figure class="hero-photo media"><img src="images/work/work-5.jpeg" alt="Students working on laptops and Arduino boards around a table" width="1206" height="674" fetchpriority="high" decoding="async"></figure>
+  </div>
+</section>
 
-  <!-- Donate a kit -->
-  <section id="donate" class="section section-alt donate-section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Donate a Kit</h2>
-      </div>
-      <div class="donate-copy">
-        <p>Your donation of a new or gently used Arduino kit helps students get hands-on experience with real components. Kits typically include a microcontroller board (Arduino Uno or compatible), USB cable, breadboard, jumper wires, LEDs, resistors, and basic sensors.</p>
-        <p>If you'd like to donate a kit, please <a class="btn btn-primary" href="donate.html">visit our Donate page</a> to see how to send a kit or contact us.</p>
-      </div>
+<section class="section section--tight section--blue" aria-labelledby="impact-h">
+  <div class="container">
+    <div class="stats-head">
+      <h2 id="impact-h">So far.</h2>
+      <a class="link-arrow" href="impact.html">See our impact</a>
     </div>
-  </section>
+    <ul class="stats">
+      <li><span class="stat-num">232+</span><span class="stat-label">Students reached</span></li>
+      <li><span class="stat-num">102</span><span class="stat-label">Boards deployed</span></li>
+      <li><span class="stat-num">5</span><span class="stat-label">Workshops run</span></li>
+      <li><span class="stat-num">2</span><span class="stat-label">Talks given</span></li>
+    </ul>
+    <p class="reach">Students reached in India and the United States.</p>
+  </div>
+</section>
 
-
-  <!-- Impact banner -->
-  <section class="impact-banner">
-    <div class="container">
-      <div class="banner-stats">
-        <div class="banner-stat">
-          <span class="banner-num">175+</span>
-          <span class="banner-label">Young engineers</span>
-        </div>
-        <div class="banner-stat">
-          <span class="banner-num">2</span>
-          <span class="banner-label">Continents reached</span>
-        </div>
-        <div class="banner-stat">
-          <span class="banner-num">74</span>
-          <span class="banner-label">Boards deployed</span>
-        </div>
+<section class="section" aria-labelledby="gallery-h">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <h2 id="gallery-h">Students building real things.</h2>
+        <p class="lead">Photos from our workshops.</p>
       </div>
+      <a class="link-arrow" href="impact.html#gallery">More from our sessions</a>
     </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="about section">
-    <div class="container about-grid">
-      <div class="about-photo">
-        <div class="about-photo-frame">
-          <span class="frame-corner tl"></span>
-          <span class="frame-corner tr"></span>
-          <span class="frame-corner bl"></span>
-          <span class="frame-corner br"></span>
-          <img src="images/founder-selfie.jpeg" alt="Founder of Click Circuits" width="480" height="480" loading="lazy"
-               onerror="this.onerror=null;this.src='';this.alt='Add your photo at images/founder-selfie.jpeg';this.classList.add('img-missing')">
-        </div>
-        <p class="about-photo-caption">Amshul Medisetti</p>
-      </div>
-      <div class="about-copy">
-        <h2>Our Mission</h2>
-        <p>We believe every student should have the opportunity to discover the world of electrical engineering.</p>
-        <p>For many students, the opportunity to explore engineering is limited by the cost of parts, equipment, and educational resources. <strong>Amshul Medisetti</strong> founded this initiative to help bridge that gap, bringing electrical engineering directly to underserved communities.</p>
-        <p>Through free Arduino kits and hands-on lessons in circuits, sensors, and robotics, we want to give students the chance to experience engineering for themselves. Our goal is to make learning accessible, encourage curiosity, and hopefully spark an interest in engineering that students can carry with them into the future.</p>
-      </div>
+    <div class="gallery">
+      <figure class="g1"><img src="images/work/work-3.jpeg" alt="Students working on laptops and Arduino circuits around a table" width="1206" height="666" loading="lazy" decoding="async"><figcaption>Coding and wiring side by side</figcaption></figure>
+      <figure class="g2"><img src="images/work/work-4.jpeg" alt="An Arduino board wired to a breadboard with LEDs and resistors" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>LEDs and resistors on a breadboard</figcaption></figure>
+      <figure class="g3"><img src="images/work/work-2.jpeg" alt="Six students in a garage, each holding an Arduino project they built" width="1600" height="862" loading="lazy" decoding="async"><figcaption>Projects students built</figcaption></figure>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Student work videos -->
-  <!-- Photo grid -->
-  <section id="work-photos" class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <h2>Moments from the workbench</h2>
-      </div>
-      <div class="photo-strip" id="photoStrip" aria-label="Photo gallery"></div>
+<section class="section section--line" id="videos">
+  <div class="container video-feature">
+    <div class="section-head">
+      <h2>Watch them build.</h2>
+      <p class="lead">Short clips from our sessions: sensors, LEDs, servos, and first working circuits.</p>
+      <p><a class="link-arrow" href="impact.html#testimonials">Hear from our students</a></p>
     </div>
-  </section>
-
-  <!-- Student work videos -->
-  <section id="work-videos" class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Students at work</h2>
-        <p class="section-sub">Use the <kbd>←</kbd> and <kbd>→</kbd> arrow keys to move between videos.</p>
-      </div>
-
-      <div class="video-player" id="videoPlayer" tabindex="0" aria-label="Student work video player, use left and right arrow keys to change video">
-        <button class="video-nav prev" id="videoPrev" aria-label="Previous video">‹</button>
-
+    <div>
+      <div class="video-player" id="videoPlayer" tabindex="0" aria-label="Student work videos. Use the left and right arrow keys to change video.">
+        <button type="button" class="video-nav prev" id="videoPrev" aria-label="Previous video">&lsaquo;</button>
         <div class="video-stage">
           <div class="video-frame">
-            <video id="videoEl" controls playsinline muted></video>
+            <video id="videoEl" controls playsinline muted preload="metadata"></video>
             <span class="video-pause-icon" id="videoPauseIcon" aria-hidden="true" hidden></span>
           </div>
-          <p class="video-empty" id="videoEmpty" hidden>No videos yet. Add files to <code>videos/work/</code>.</p>
+          <p class="video-empty" id="videoEmpty" hidden>No videos yet.</p>
           <p class="video-caption" id="videoCaption"></p>
           <p class="video-count" id="videoCount"></p>
         </div>
-
-        <button class="video-nav next" id="videoNext" aria-label="Next video">›</button>
+        <button type="button" class="video-nav next" id="videoNext" aria-label="Next video">&rsaquo;</button>
       </div>
+      <div class="video-thumbs" id="videoThumbs"></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Impact CTA -->
-  <section class="section section-alt impact-cta">
-    <div class="container impact-cta-inner">
-      <div>
-        <h2>See the impact behind these moments</h2>
-        <p>Every photo and video above comes from a real session. See the reach, the numbers, and the story of what Click Circuits is building.</p>
-      </div>
-      <a class="btn btn-primary" href="impact.html">See our impact</a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
+<section class="section section--line" aria-labelledby="how-h">
   <div class="container">
-    <p>&copy; <span id="year"></span> Click Circuits. A nonprofit bringing engineering to every student.</p>
+    <div class="section-head">
+      <h2 id="how-h">How we do it.</h2>
+      <p class="lead">Three ways students learn AI with us. All of them hands-on.</p>
+    </div>
+    <div class="pillars">
+      <article class="card">
+        <div class="card-media"><img class="pos-top" src="images/founder-brijesh-900.jpg" alt="Brijesh Murugesan, who gives the AI talks" width="900" height="1600" loading="lazy" decoding="async"></div>
+        <div class="card-body">
+          <h3>AI talks</h3>
+          <p>Talks for schools and communities on what AI is, how to use it well, and how to start building with it.</p>
+          <a class="link-arrow" href="programs.html#talks">About the talks</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media"><img src="images/posters/work-3.jpg" alt="A green LED lit up on a student&rsquo;s breadboard circuit" width="576" height="1024" loading="lazy" decoding="async"></div>
+        <div class="card-body">
+          <h3>Hands-on workshops</h3>
+          <p>Students wire real circuits with Arduino boards, write the code, and test what they built.</p>
+          <a class="link-arrow" href="programs.html#workshops">About the workshops</a>
+        </div>
+      </article>
+      <article class="card card--blue">
+        <div class="path" aria-hidden="true"><span class="path-step"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 2 4.5 13.5H11L10 22l9.5-12.5H13z"/></svg></span><span class="path-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21.5h4M12 2.5a6.5 6.5 0 0 0-3.8 11.8c.5.4.8 1 .8 1.6V16h6v-.1c0-.6.3-1.2.8-1.6A6.5 6.5 0 0 0 12 2.5z"/></svg></span><span class="path-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2.5"/><path d="M9.5 2.5v3.5M14.5 2.5v3.5M9.5 18v3.5M14.5 18v3.5M2.5 9.5H6M2.5 14.5H6M18 9.5h3.5M18 14.5h3.5"/></svg></span><span class="path-step"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 2.5l2 5.6 5.6 2-5.6 2-2 5.6-2-5.6-5.6-2 5.6-2zM18.5 14.5l1 2.6 2.6 1-2.6 1-1 2.6-1-2.6-2.6-1 2.6-1z"/></svg></span></div>
+        <div class="card-body">
+          <span class="tag">Coming soon</span>
+          <h3 style="margin-top:0.8rem">Learn online</h3>
+          <p>Short lessons on this site, so students can keep learning between sessions.</p>
+          <a class="link-arrow" href="programs.html#learn">What is coming</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--line" id="kit" aria-labelledby="kit-h" data-kit>
+  <div class="container kit-grid">
+    <div class="viewer" data-viewer data-start="arduino">
+      <div class="viewer-stage" tabindex="0" aria-roledescription="3D part viewer" aria-label="Arduino Uno. Drag, or use the arrow keys, to turn it.">
+        <span class="viewer-floor" aria-hidden="true"></span>
+        <div class="viewer-obj"><div class="viewer-spin"><img src="images/parts/arduino.webp" alt="An Arduino Uno board" width="592" height="492" decoding="async"></div></div>
+        <span class="viewer-hint" aria-hidden="true">Drag to turn it</span>
+      </div>
+      <p class="viewer-caption" aria-live="polite"><strong>Arduino Uno.</strong> The small computer that runs the code students write. It reads buttons and sensors and drives lights and motors.</p>
+      <p class="viewer-credit">Photo: SparkFun Electronics, CC BY 2.0, background removed.</p>
+    </div>
+    <div>
+      <h2 id="kit-h">What is in a kit.</h2>
+      <p class="lead">Everything a student needs to build a first circuit. We buy parts in bulk, so one kit helps five students. Tap a part to see it up close.</p>
+      <ul class="part-grid">
+        <li><button type="button" class="part" data-show="arduino" aria-pressed="true"><img src="images/parts/arduino.webp" alt="" width="592" height="492" loading="lazy" decoding="async">Arduino board</button></li>
+        <li><button type="button" class="part" data-show="bluetooth" aria-pressed="false"><img src="images/parts/bluetooth.webp" alt="" width="474" height="200" loading="lazy" decoding="async">Bluetooth module</button></li>
+        <li><button type="button" class="part" data-show="led" aria-pressed="false"><img src="images/parts/led.webp" alt="" width="812" height="890" loading="lazy" decoding="async">8 LEDs</button></li>
+        <li><button type="button" class="part" data-show="resistor" aria-pressed="false"><img src="images/parts/resistor.webp" alt="" width="900" height="480" loading="lazy" decoding="async">8 resistors</button></li>
+        <li><button type="button" class="part" data-show="servo" aria-pressed="false"><img src="images/parts/servo.webp" alt="" width="900" height="742" loading="lazy" decoding="async">3 micro servos</button></li>
+        <li><button type="button" class="part" data-show="breadboard" aria-pressed="false"><img src="images/parts/breadboard.webp" alt="" width="900" height="732" loading="lazy" decoding="async">Breadboard</button></li>
+        <li><button type="button" class="part" data-show="joystick" aria-pressed="false"><img src="images/parts/joystick.webp" alt="" width="318" height="348" loading="lazy" decoding="async">Joystick</button></li>
+        <li><button type="button" class="part" data-show="button" aria-pressed="false"><img src="images/parts/button.webp" alt="" width="900" height="658" loading="lazy" decoding="async">Push button</button></li>
+        <li><button type="button" class="part" data-show="wires" aria-pressed="false"><img src="images/parts/wires.webp" alt="" width="900" height="326" loading="lazy" decoding="async">Jumper wires</button></li>
+      </ul>
+      <p><a class="link-arrow" href="donate.html">See what a kit costs</a></p>
+      <p class="viewer-credit">Part photos by SparkFun Electronics (CC BY 2.0) and oomlout (CC BY-SA 2.0), backgrounds removed. Pick a part to see its exact source.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--line" id="events" aria-labelledby="events-h">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <h2 id="events-h">Upcoming events.</h2>
+        <p class="lead">Two hands-on workshops and an AI talk in Coimbatore, Tamil Nadu.</p>
+      </div>
+      <a class="btn btn--outline" href="events.html">All events</a>
+    </div>
+    <div class="event-list" data-events></div>
+    <noscript><p class="events-empty">Upcoming events: a workshop on 28 November, a talk on 4 December, and a workshop on 15 December, all in Coimbatore, Tamil Nadu. <a href="register.html">Register here</a>.</p></noscript>
+  </div>
+</section>
+
+<section class="section section--blue" aria-labelledby="involve-h">
+  <div class="container">
+    <h2 id="involve-h">Help more students build with AI.</h2>
+    <p>Founded by <a href="about.html">Brijesh Murugesan</a>. Open to every student, and to anyone who wants to help.</p>
+    <div class="involve-grid">
+      <div class="card">
+        <h3>Volunteer</h3>
+        <p>Help at a workshop, support an event, or share a skill with students.</p>
+        <a class="btn btn--primary btn--sm" href="get-involved.html#volunteer">Volunteer with us</a>
+      </div>
+      <div class="card">
+        <h3>Partner with us</h3>
+        <p>Bring a workshop or a talk to your school, club, or community group.</p>
+        <a class="btn btn--primary btn--sm" href="get-involved.html#partner">Start a conversation</a>
+      </div>
+      <div class="card">
+        <h3>Donate a kit</h3>
+        <p>Put a full kit of real components in students&rsquo; hands.</p>
+        <a class="btn btn--primary btn--sm" href="donate.html">Donate a kit</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html"><img src="images/logo-mark-white.svg" alt="" width="40" height="40"><span>Click Circuits</span></a>
+      <p>Helping the next generation learn and build with AI.</p>
+    </div>
+    <div>
+      <h2>Explore</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Get involved</h2>
+      <ul>
+        <li><a href="get-involved.html#volunteer">Volunteer</a></li>
+        <li><a href="get-involved.html#partner">Partner with us</a></li>
+        <li><a href="donate.html">Donate a kit</a></li>
+        <li><a href="register.html">Register for an event</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; <span data-year>2026</span> Click Circuits</p>
+      <p><a href="mailto:brijesh.m2026@gmail.com">brijesh.m2026@gmail.com</a></p>
+    </div>
   </div>
 </footer>
-
 <script src="js/main.js"></script>
+<script src="js/viewer3d.js" defer></script>
 </body>
 </html>
