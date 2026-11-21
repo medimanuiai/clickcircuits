@@ -35,18 +35,21 @@ for (const page of pages) {
   // Search engines and browsers pick up the site icon from these links.
   if (!/<link rel="icon" href="\/favicon\.ico"/.test(html)) err(`${page}: missing /favicon.ico icon link`);
   if (!/<link rel="apple-touch-icon" href="\/apple-touch-icon\.png"/.test(html)) err(`${page}: missing apple-touch-icon link`);
-  // A 3D viewer needs its script and the fallback photo it shows if WebGL is unavailable.
-  if (html.includes('data-viewer=')) {
-    if (!/<script src="js\/viewer3d\.js"/.test(html)) err(`${page}: has a 3D viewer but no js/viewer3d.js script`);
-    if (!/class="viewer-fallback"/.test(html)) err(`${page}: 3D viewer has no fallback image`);
+  // A part viewer needs its script, and every part a button can show needs a photo.
+  if (html.includes('data-viewer')) {
+    if (!/<script src="js\/viewer3d\.js"/.test(html)) err(`${page}: has a part viewer but no js/viewer3d.js script`);
   }
+  for (const m of html.matchAll(/data-show="([^"]+)"/g)) {
+    if (!existsSync(join(root, `images/parts/${m[1]}.webp`))) err(`${page}: no photo images/parts/${m[1]}.webp for data-show="${m[1]}"`);
+  }
+  // Design rule: flat colors, no gradients in page markup.
+  if (/gradient\(/.test(html)) err(`${page}: uses a CSS gradient (the design uses flat colors only)`);
 }
 
-// The viewer is split across four files; viewer3d.js loads the other three itself.
-for (const f of ['js/viewer3d.js', 'js/viewer-kit.js', 'js/viewer-arduino.js', 'js/viewer-parts.js']) {
-  if (!existsSync(join(root, f))) err(`missing ${f}`);
-  else if (new RegExp("[" + String.fromCharCode(0x2014, 0x2013) + "]").test(readFileSync(join(root, f), 'utf8'))) err(`${f}: contains an em or en dash`);
-}
+// Part viewer script.
+if (!existsSync(join(root, 'js/viewer3d.js'))) err('missing js/viewer3d.js');
+else if (new RegExp("[" + String.fromCharCode(0x2014, 0x2013) + "]").test(readFileSync(join(root, 'js/viewer3d.js'), 'utf8'))) err('js/viewer3d.js: contains an em or en dash');
+if (/gradient\(/.test(readFileSync(join(root, 'css/styles.css'), 'utf8'))) err('css/styles.css: uses a gradient (the design uses flat colors only)');
 
 // Search engines: every page needs a robots meta tag, and the sitemap must list every page.
 for (const page of pages) {

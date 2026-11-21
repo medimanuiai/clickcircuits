@@ -23,7 +23,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@600;700;800&amp;display=swap">
 <link rel="stylesheet" href="css/styles.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -31,111 +31,98 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="nav-bar">
-    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
+    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="40" height="40"><span>Click Circuits</span></a>
     <a class="btn btn--primary btn--sm nav-donate-sm" href="donate.html">Donate</a>
     <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav" aria-label="Main">
-      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="impact.html">Our Impact</a></li><li><a href="events.html">Events</a></li></ul>
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="impact.html">Impact</a></li><li><a href="events.html">Events</a></li></ul>
       <div class="nav-actions">
-        <a class="btn btn--outline btn--sm" href="get-involved.html">Get Involved</a>
+        <a class="btn btn--outline btn--sm" href="get-involved.html">Get involved</a>
         <a class="btn btn--primary btn--sm" href="donate.html">Donate</a>
       </div>
     </nav>
-    <span class="scroll-progress" aria-hidden="true"></span>
   </div>
 </header>
 <main id="main">
 <section class="page-intro">
   <div class="container intro-grid">
     <div>
-      <p class="eyebrow">About</p>
-      <h1>Engineering and AI, taught by building.</h1>
-      <p class="lead">An initiative led by Brijesh Murugesan, teaching engineering and AI by building.</p>
+      <h1>Hello, I&rsquo;m Brijesh.</h1>
+      <p class="lead">I lead Click Circuits, an initiative that teaches students how AI works and how to build with it.</p>
       <div class="cluster"><a class="btn btn--primary" href="events.html">See upcoming events</a><a class="btn btn--outline" href="contact.html">Get in touch</a></div>
     </div>
     <div class="media media--portrait"><img src="images/founder-brijesh-900.jpg" alt="Brijesh Murugesan holding an ice cream cone" width="900" height="1600" fetchpriority="high" decoding="async"></div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="founder-h">
-  <div class="container split split--top">
-    <div class="reveal"><div class="viewer" data-viewer="arduino,bluetooth,led,resistor,servo,breadboard,joystick,button,wires" data-start="arduino">
-  <div class="viewer-stage">
-    <img class="viewer-fallback" src="images/arduino.jpg" alt="An Arduino Uno board seen from above" width="768" height="566" loading="lazy" decoding="async">
-    <span class="viewer-hint">Drag to rotate</span>
-  </div>
-  <div class="viewer-tabs" aria-label="Choose a part"></div>
-  <p class="viewer-caption" aria-live="polite">An Arduino Uno. Drag to rotate, and hover over a part to see what it does.</p>
-</div></div>
-    <div class="prose reveal">
-      <p class="eyebrow">Our founder</p>
-      <h2 id="founder-h">Hello, I&rsquo;m Brijesh.</h2>
-      <p>My name is Brijesh Murugesan, and I lead Click Circuits, an initiative built around one idea: everyone deserves a real chance to explore engineering and AI.</p>
+<section class="section" aria-labelledby="story-h">
+  <div class="container">
+    <div class="prose">
+      <h2 id="story-h">Why I started.</h2>
+      <p>Click Circuits is built around one idea: everyone deserves a real chance to explore engineering and AI.</p>
       <p>It began with free Arduino kits and hands-on lessons in circuits, sensors, and robotics for students who did not have access to real components. Seeing a student build something with their own hands is still the heart of everything we do.</p>
       <p>Now I am taking that further, with talks on why AI matters, how to bring it into your school, work, and projects, and how to start developing with it. Whether it is a circuit on a breadboard or a model on a laptop, my goal is the same: spark curiosity and help more people see themselves as builders.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--tint" aria-labelledby="guides-h">
+<section class="section section--line" aria-labelledby="guides-h">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">How we teach</p>
-      <h2 id="guides-h">Learning by building, open to everyone.</h2>
+    <div class="section-head">
+      <h2 id="guides-h">How we teach.</h2>
     </div>
-    <div class="topic-list reveal">
-      <div><span class="topic-num">01</span><h3>Hands-on first</h3><p>Students work with real components and real code, not simulations.</p></div>
-      <div><span class="topic-num">02</span><h3>Access for every student</h3><p>Curiosity should be the only requirement for getting started.</p></div>
-      <div><span class="topic-num">03</span><h3>From circuits to AI</h3><p>The same learn-by-building approach applies to understanding and developing with AI.</p></div>
+    <div class="points">
+      <div class="card"><span class="point-num">1</span><h3>Hands-on first</h3><p>Students work with real components and real code, not simulations.</p></div>
+      <div class="card"><span class="point-num">2</span><h3>Open to every student</h3><p>Curiosity should be the only requirement for getting started.</p></div>
+      <div class="card"><span class="point-num">3</span><h3>From circuits to AI</h3><p>The same learn-by-building approach applies to understanding and developing with AI.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section section--azure on-dark">
+<section class="section section--blue">
   <div class="container cta-inner">
-    <div class="reveal">
+    <div>
       <h2>Bring a talk or workshop to your community.</h2>
       <p>Tell us about your school, club, or group and we will get back to you.</p>
     </div>
-    <div class="cluster reveal"><a class="btn btn--light" href="mailto:brijesh.m2026@gmail.com?subject=Speaking%20request">Request a talk</a><a class="btn btn--outline-light" href="programs.html">See our programs</a></div>
+    <div class="cluster"><a class="btn btn--light" href="mailto:brijesh.m2026@gmail.com?subject=Speaking%20request">Request a talk</a><a class="btn btn--outline-light" href="programs.html">See our programs</a></div>
   </div>
 </section>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
-      <p>Hands-on engineering, electronics, robotics, and AI education for students in India and the United States.</p>
+      <a class="brand" href="index.html"><img src="images/logo-mark-white.svg" alt="" width="40" height="40"><span>Click Circuits</span></a>
+      <p>Helping the next generation learn and build with AI.</p>
     </div>
     <div>
-      <h4>Explore</h4>
+      <h2>Explore</h2>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="programs.html">Programs</a></li>
-        <li><a href="impact.html">Our Impact</a></li>
+        <li><a href="impact.html">Impact</a></li>
         <li><a href="events.html">Events</a></li>
       </ul>
     </div>
     <div>
-      <h4>Get involved</h4>
+      <h2>Get involved</h2>
       <ul>
         <li><a href="get-involved.html#volunteer">Volunteer</a></li>
-        <li><a href="get-involved.html#partner">Partner With Us</a></li>
-        <li><a href="donate.html">Donate a Kit</a></li>
-        <li><a href="register.html">Register for an Event</a></li>
+        <li><a href="get-involved.html#partner">Partner with us</a></li>
+        <li><a href="donate.html">Donate a kit</a></li>
+        <li><a href="register.html">Register for an event</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <p>&copy; <span data-year>2026</span> Click Circuits. All rights reserved.</p>
+      <p>&copy; <span data-year>2026</span> Click Circuits</p>
       <p><a href="mailto:brijesh.m2026@gmail.com">brijesh.m2026@gmail.com</a></p>
     </div>
   </div>
 </footer>
 <script src="js/main.js"></script>
-<script src="js/viewer3d.js" defer></script>
 </body>
 </html>

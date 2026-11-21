@@ -23,7 +23,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@600;700;800&amp;display=swap">
 <link rel="stylesheet" href="css/styles.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -31,66 +31,58 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="nav-bar">
-    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
+    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="40" height="40"><span>Click Circuits</span></a>
     <a class="btn btn--primary btn--sm nav-donate-sm" href="donate.html">Donate</a>
     <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav" aria-label="Main">
-      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="impact.html" aria-current="page">Our Impact</a></li><li><a href="events.html">Events</a></li></ul>
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="impact.html" aria-current="page">Impact</a></li><li><a href="events.html">Events</a></li></ul>
       <div class="nav-actions">
-        <a class="btn btn--outline btn--sm" href="get-involved.html">Get Involved</a>
+        <a class="btn btn--outline btn--sm" href="get-involved.html">Get involved</a>
         <a class="btn btn--primary btn--sm" href="donate.html">Donate</a>
       </div>
     </nav>
-    <span class="scroll-progress" aria-hidden="true"></span>
   </div>
 </header>
 <main id="main">
 <section class="page-intro">
-  <div class="container intro-grid">
-    <div>
-      <p class="eyebrow">Our impact</p>
-      <h1>Students reached, boards deployed, workshops run.</h1>
-      <p class="lead">Every number below is a student who built something with real components.</p>
-    </div>
-    <div class="media "><img src="images/work/work-5.jpeg" alt="Students working on laptops and Arduino boards around a table" width="1206" height="674" fetchpriority="high" decoding="async"></div>
+  <div class="container">
+    <h1>What we have built so far.</h1>
+    <p class="lead">Every number below is a student who built something with real components.</p>
   </div>
 </section>
 
-<section class="section section--tight section--azure on-dark" aria-label="Impact figures">
-  <div class="container reveal">
+<section class="section section--tight section--blue" aria-label="Impact figures">
+  <div class="container">
     <ul class="stats">
-  <li><span class="stat-num" data-count="232" data-suffix="+">232+</span><span class="stat-label">Students reached</span></li>
-  <li><span class="stat-num" data-count="102">102</span><span class="stat-label">Boards deployed</span></li>
-  <li><span class="stat-num" data-count="5">5</span><span class="stat-label">Workshops conducted</span></li>
-  <li><span class="stat-num" data-count="2">2</span><span class="stat-label">Talks delivered</span></li>
-</ul>
-<p class="reach">Students reached in two countries: <span class="chip">India</span><span class="chip">United States</span></p>
+      <li><span class="stat-num">232+</span><span class="stat-label">Students reached</span></li>
+      <li><span class="stat-num">102</span><span class="stat-label">Boards deployed</span></li>
+      <li><span class="stat-num">5</span><span class="stat-label">Workshops run</span></li>
+      <li><span class="stat-num">2</span><span class="stat-label">Talks given</span></li>
+    </ul>
+    <p class="reach">Students reached in India and the United States.</p>
   </div>
 </section>
 
 <section class="section" id="gallery" aria-labelledby="gal-h">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">From our workshops</p>
+    <div class="section-head">
       <h2 id="gal-h">Photos from our sessions.</h2>
     </div>
     <div class="gallery">
-  <figure class="g1 reveal"><img src="images/work/work-3.jpeg" alt="Students working on laptops and Arduino circuits around a table" width="1206" height="666" loading="lazy" decoding="async"><figcaption>Coding and wiring side by side</figcaption></figure>
-  <figure class="g2 reveal"><img src="images/work/work-4.jpeg" alt="An Arduino board wired to a breadboard with LEDs and resistors" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>LEDs and resistors on a breadboard</figcaption></figure>
-  <figure class="g3 reveal"><img src="images/work/work-2.jpeg" alt="Six students in a garage, each holding an Arduino project they built" width="1600" height="862" loading="lazy" decoding="async"><figcaption>The Arduino projects students built</figcaption></figure>
-</div>
+      <figure class="g1"><img src="images/work/work-3.jpeg" alt="Students working on laptops and Arduino circuits around a table" width="1206" height="666" loading="lazy" decoding="async"><figcaption>Coding and wiring side by side</figcaption></figure>
+      <figure class="g2"><img src="images/work/work-4.jpeg" alt="An Arduino board wired to a breadboard with LEDs and resistors" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>LEDs and resistors on a breadboard</figcaption></figure>
+      <figure class="g3"><img src="images/work/work-2.jpeg" alt="Six students in a garage, each holding an Arduino project they built" width="1600" height="862" loading="lazy" decoding="async"><figcaption>Projects students built</figcaption></figure>
+    </div>
   </div>
 </section>
 
-<section class="section section--tint" id="testimonials">
+<section class="section section--line" id="testimonials">
   <div class="container video-feature">
-    <div class="section-head reveal">
-      <p class="eyebrow">Hear from our students</p>
+    <div class="section-head">
       <h2>In their own words.</h2>
       <p class="lead">Students talk about what they built and what they learned.</p>
-      <p class="form-note">Use the arrow keys or the thumbnails to move between videos.</p>
     </div>
-    <div class="reveal">
+    <div>
       <div class="video-player" id="impactVideoPlayer" tabindex="0" aria-label="Student testimonial videos. Use the left and right arrow keys to change video.">
         <button type="button" class="video-nav prev" id="impactVideoPrev" aria-label="Previous video">&lsaquo;</button>
         <div class="video-stage">
@@ -109,70 +101,60 @@
   </div>
 </section>
 
-<section class="section" aria-labelledby="start-h">
-  <div class="container split split--top">
-    <div class="reveal"><div class="viewer" data-viewer="arduino,bluetooth,led,resistor,servo,breadboard,joystick,button,wires" data-start="arduino">
-  <div class="viewer-stage">
-    <img class="viewer-fallback" src="images/arduino.jpg" alt="An Arduino Uno board seen from above" width="768" height="566" loading="lazy" decoding="async">
-    <span class="viewer-hint">Drag to rotate</span>
-  </div>
-  <div class="viewer-tabs" aria-label="Choose a part"></div>
-  <p class="viewer-caption" aria-live="polite">An Arduino Uno. Drag to rotate, and hover over a part to see what it does.</p>
-</div></div>
-    <div class="prose reveal">
-      <p class="eyebrow">Where it started</p>
-      <h2 id="start-h">One student, one circuit at a time.</h2>
+<section class="section section--line" aria-labelledby="start-h">
+  <div class="container">
+    <div class="prose">
+      <h2 id="start-h">Where it started.</h2>
       <p>We started this initiative in the summer of 2023, running sessions in libraries, community centers, and even in our garage, wherever there is a student curious about engineering. We work with libraries, parents, and community programs that serve students with limited access to STEM resources, from our own community to young engineers in India.</p>
       <p>Every student gets real components, Arduino boards, sensors, and circuits, not simulations. They learn to build, code, and debug actual electrical systems, and walk away with lasting skills and the confidence that they can create engineering solutions.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--azure on-dark">
+<section class="section section--blue">
   <div class="container cta-inner">
-    <div class="reveal">
+    <div>
       <h2>Bring Click Circuits to your students.</h2>
       <p>Schools, community centers, and after-school programs: reach out to set up a session.</p>
     </div>
-    <div class="cluster reveal"><a class="btn btn--light" href="contact.html">Contact us</a><a class="btn btn--outline-light" href="get-involved.html">Ways to get involved</a></div>
+    <div class="cluster"><a class="btn btn--light" href="contact.html">Contact us</a><a class="btn btn--outline-light" href="get-involved.html">Ways to get involved</a></div>
   </div>
 </section>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
-      <p>Hands-on engineering, electronics, robotics, and AI education for students in India and the United States.</p>
+      <a class="brand" href="index.html"><img src="images/logo-mark-white.svg" alt="" width="40" height="40"><span>Click Circuits</span></a>
+      <p>Helping the next generation learn and build with AI.</p>
     </div>
     <div>
-      <h4>Explore</h4>
+      <h2>Explore</h2>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="programs.html">Programs</a></li>
-        <li><a href="impact.html">Our Impact</a></li>
+        <li><a href="impact.html">Impact</a></li>
         <li><a href="events.html">Events</a></li>
       </ul>
     </div>
     <div>
-      <h4>Get involved</h4>
+      <h2>Get involved</h2>
       <ul>
         <li><a href="get-involved.html#volunteer">Volunteer</a></li>
-        <li><a href="get-involved.html#partner">Partner With Us</a></li>
-        <li><a href="donate.html">Donate a Kit</a></li>
-        <li><a href="register.html">Register for an Event</a></li>
+        <li><a href="get-involved.html#partner">Partner with us</a></li>
+        <li><a href="donate.html">Donate a kit</a></li>
+        <li><a href="register.html">Register for an event</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <p>&copy; <span data-year>2026</span> Click Circuits. All rights reserved.</p>
+      <p>&copy; <span data-year>2026</span> Click Circuits</p>
       <p><a href="mailto:brijesh.m2026@gmail.com">brijesh.m2026@gmail.com</a></p>
     </div>
   </div>
 </footer>
 <script src="js/main.js"></script>
-<script src="js/viewer3d.js" defer></script>
 </body>
 </html>

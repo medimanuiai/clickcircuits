@@ -1,5 +1,5 @@
 /* Click Circuits: site behavior.
-   Nav menu, scroll reveal and count-up, video players, events list,
+   Nav menu, video players, events list,
    register form, and the email popup. Plain JavaScript, no build step. */
 
 const CONTACT_EMAIL = 'brijesh.m2026@gmail.com';
@@ -34,20 +34,6 @@ document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new 
   const onChange = () => setOpen(false);
   if (desktop.addEventListener) desktop.addEventListener('change', onChange); else desktop.addListener(onChange);
 
-  // Header shadow after scrolling, plus a thin reading-progress line under the bar.
-  const progress = header.querySelector('.scroll-progress');
-  let ticking = false;
-  const onScroll = () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 8);
-    if (progress) {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
-    }
-    ticking = false;
-  };
-  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-  onScroll();
-
   // Sliding underline: follows the pointer or keyboard focus across the links
   // and returns to the current page when you leave. Desktop menu only.
   const links = nav.querySelector('.nav-links');
@@ -74,48 +60,6 @@ document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new 
     place();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
   }
-})();
-
-/* ---------- Scroll reveal and count-up numbers ---------- */
-(function setupMotion() {
-  const reveals = document.querySelectorAll('.reveal');
-  const counters = document.querySelectorAll('[data-count]');
-  if (!('IntersectionObserver' in window) || reducedMotion()) {
-    reveals.forEach((el) => el.classList.add('in'));
-    return; // counters keep the final number written in the HTML
-  }
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('in');
-      revealObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-  reveals.forEach((el) => revealObserver.observe(el));
-
-  function countUp(el) {
-    const end = Number(el.dataset.count);
-    const suffix = el.dataset.suffix || '';
-    const duration = 1300;
-    const start = performance.now();
-    function frame(now) {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = Math.round(end * eased) + suffix;
-      if (t < 1) requestAnimationFrame(frame);
-    }
-    el.textContent = '0' + suffix;
-    requestAnimationFrame(frame);
-  }
-  const countObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      countUp(entry.target);
-      countObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.6 });
-  counters.forEach((el) => countObserver.observe(el));
 })();
 
 /* ---------- Video players ----------
@@ -351,7 +295,7 @@ document.querySelectorAll('[data-events]').forEach((host) => {
           <h3>${escapeHtml(ev.title)}</h3>
           <p>${longDate(ev)} &middot; ${escapeHtml(ev.place)} &middot; ${escapeHtml(ev.note)}</p>
         </div>
-        <a class="btn btn--outline btn--sm" href="register.html?event=${encodeURIComponent(ev.id)}"
+        <a class="btn btn--primary btn--sm" href="register.html?event=${encodeURIComponent(ev.id)}"
            aria-label="Register for ${escapeHtml(ev.title)} on ${longDate(ev)}">Register</a>
       </article>`;
   }).join('');
