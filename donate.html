@@ -30,7 +30,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="nav-bar">
-    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="38" height="38"><span>Click Circuits</span></a>
+    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
     <a class="btn btn--primary btn--sm nav-donate-sm" href="donate.html">Donate</a>
     <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav" aria-label="Main">
@@ -40,23 +40,22 @@
         <a class="btn btn--primary btn--sm" href="donate.html" aria-current="page">Donate</a>
       </div>
     </nav>
+    <span class="scroll-progress" aria-hidden="true"></span>
   </div>
 </header>
 <main id="main">
 <section class="page-intro">
-  <div class="container intro-grid">
-    <div>
-      <p class="eyebrow">Donate a kit</p>
-      <h1>Put real components in a student's hands.</h1>
-      <p class="lead">Donated kits enable hands-on lessons for students who otherwise lack access to parts and tools.</p>
-    </div>
-    <div class="media "><img src="images/arduino.jpg" alt="An Arduino board, the heart of a Click Circuits kit" width="768" height="566" fetchpriority="high" decoding="async"></div>
+  <div class="container">
+    <p class="eyebrow">Donate a kit</p>
+    <h1>Put real components in a student's hands.</h1>
+    <p class="lead">Donated kits enable hands-on lessons for students who otherwise lack access to parts and tools.</p>
   </div>
 </section>
 
 <section class="section">
-  <div class="container donate-copy">
-    <p class="lead reveal">Thank you for supporting Click Circuits. Every kit gives students the parts to build, wire, and control their own circuits.</p>
+  <div class="container donate-grid">
+    <div class="donate-copy">
+      <p class="lead reveal">Thank you for supporting Click Circuits. Every kit gives students the parts to build, wire, and control their own circuits.</p>
 <div class="kit-contents">
           <div class="kit-contents-head">
             <h3>What's in 1 Kit <span class="kit-badge">1 kit helps 5 kids</span></h3>
@@ -193,18 +192,27 @@
           </div>
           <p class="kit-bulk-note">We buy parts in bulk because it makes each component significantly cheaper, which is how one kit purchase is able to help 5 kids instead of just one.</p>
         </div>
-    <div class="reveal">
-      <p>To arrange a donation, please email us at <a href="mailto:brijesh.m2026@gmail.com?subject=Donate%20a%20Kit">brijesh.m2026@gmail.com</a> with &ldquo;Donate a Kit&rdquo; in the subject line and let us know if you are buying a single kit for yourself or to donate to our organization.</p>
-      <p>Prefer to give a smaller amount instead of funding a full kit? That is welcome too. Just email us and we will put it toward the next kit.</p>
-      <p><a class="btn btn--primary" href="mailto:brijesh.m2026@gmail.com?subject=Donate%20a%20Kit">Email to donate</a></p>
+      <div class="reveal">
+        <p>To arrange a donation, please email us at <a href="mailto:brijesh.m2026@gmail.com?subject=Donate%20a%20Kit">brijesh.m2026@gmail.com</a> with &ldquo;Donate a Kit&rdquo; in the subject line and let us know if you are buying a single kit for yourself or to donate to our organization.</p>
+        <p>Prefer to give a smaller amount instead of funding a full kit? That is welcome too. Just email us and we will put it toward the next kit.</p>
+        <p><a class="btn btn--primary" href="mailto:brijesh.m2026@gmail.com?subject=Donate%20a%20Kit">Email to donate</a></p>
+      </div>
     </div>
+    <div class="reveal"><div class="viewer" data-viewer="arduino,servo,led" data-start="arduino">
+  <div class="viewer-stage">
+    <img class="viewer-fallback" src="images/arduino.jpg" alt="An Arduino Uno board seen from above" width="768" height="566" loading="lazy" decoding="async">
+    <span class="viewer-hint">Drag to rotate</span>
+  </div>
+  <div class="viewer-tabs" aria-label="Choose a part"></div>
+  <p class="viewer-caption" aria-live="polite">An Arduino Uno. Drag to rotate, and hover over a part to see what it does.</p>
+</div></div>
   </div>
 </section>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="38" height="38"><span>Click Circuits</span></a>
+      <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
       <p>Hands-on engineering, electronics, robotics, and AI education for students in India and the United States.</p>
     </div>
     <div>
@@ -236,5 +244,6 @@
   </div>
 </footer>
 <script src="js/main.js"></script>
+<script src="js/viewer3d.js" defer></script>
 </body>
 </html>

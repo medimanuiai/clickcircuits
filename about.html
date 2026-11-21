@@ -30,7 +30,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="nav-bar">
-    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="38" height="38"><span>Click Circuits</span></a>
+    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
     <a class="btn btn--primary btn--sm nav-donate-sm" href="donate.html">Donate</a>
     <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav" aria-label="Main">
@@ -40,6 +40,7 @@
         <a class="btn btn--primary btn--sm" href="donate.html">Donate</a>
       </div>
     </nav>
+    <span class="scroll-progress" aria-hidden="true"></span>
   </div>
 </header>
 <main id="main">
@@ -47,7 +48,7 @@
   <div class="container intro-grid">
     <div>
       <p class="eyebrow">About</p>
-      <h1>Everyone deserves a real chance to explore engineering and AI.</h1>
+      <h1>Engineering and AI, taught by building.</h1>
       <p class="lead">Click Circuits is an initiative led by Brijesh Murugesan. It began with free Arduino kits and now also includes workshops and talks about AI.</p>
       <div class="cluster"><a class="btn btn--primary" href="events.html">See upcoming events</a><a class="btn btn--outline" href="contact.html">Get in touch</a></div>
     </div>
@@ -56,12 +57,18 @@
 </section>
 
 <section class="section" aria-labelledby="founder-h">
-  <div class="container split split--wide-media">
-    <div class="reveal">
+  <div class="container split split--top">
+    <div class="reveal"><div class="viewer" data-viewer="arduino,servo,led" data-start="arduino">
+  <div class="viewer-stage">
+    <img class="viewer-fallback" src="images/arduino.jpg" alt="An Arduino Uno board seen from above" width="768" height="566" loading="lazy" decoding="async">
+    <span class="viewer-hint">Drag to rotate</span>
+  </div>
+  <div class="viewer-tabs" aria-label="Choose a part"></div>
+  <p class="viewer-caption" aria-live="polite">An Arduino Uno. Drag to rotate, and hover over a part to see what it does.</p>
+</div></div>
+    <div class="prose reveal">
       <p class="eyebrow">Our founder</p>
       <h2 id="founder-h">Hello, I&rsquo;m Brijesh.</h2>
-    </div>
-    <div class="prose reveal">
       <p>My name is Brijesh Murugesan, and I lead Click Circuits, an initiative built around one idea: everyone deserves a real chance to explore engineering and AI.</p>
       <p>Click Circuits began with free Arduino kits and hands-on lessons in circuits, sensors, and robotics for students who did not have access to real components. Seeing a student build something with their own hands is still the heart of everything we do.</p>
       <p>Now I am taking that mission further. I want to speak about why AI matters, how to bring it into your school, work, and projects, and how to start developing with it yourself.</p>
@@ -73,7 +80,7 @@
 <section class="section section--tint" aria-labelledby="guides-h">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">What guides our work</p>
+      <p class="eyebrow">How we teach</p>
       <h2 id="guides-h">Learning by building, open to everyone.</h2>
     </div>
     <div class="topic-list reveal">
@@ -97,7 +104,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="38" height="38"><span>Click Circuits</span></a>
+      <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
       <p>Hands-on engineering, electronics, robotics, and AI education for students in India and the United States.</p>
     </div>
     <div>
@@ -129,5 +136,6 @@
   </div>
 </footer>
 <script src="js/main.js"></script>
+<script src="js/viewer3d.js" defer></script>
 </body>
 </html>

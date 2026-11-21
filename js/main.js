@@ -34,9 +34,46 @@ document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new 
   const onChange = () => setOpen(false);
   if (desktop.addEventListener) desktop.addEventListener('change', onChange); else desktop.addListener(onChange);
 
-  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
-  window.addEventListener('scroll', onScroll, { passive: true });
+  // Header shadow after scrolling, plus a thin reading-progress line under the bar.
+  const progress = header.querySelector('.scroll-progress');
+  let ticking = false;
+  const onScroll = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+    if (progress) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+    }
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
+
+  // Sliding underline: follows the pointer or keyboard focus across the links
+  // and returns to the current page when you leave. Desktop menu only.
+  const links = nav.querySelector('.nav-links');
+  if (links) {
+    const ink = document.createElement('span');
+    ink.className = 'nav-ink';
+    ink.setAttribute('aria-hidden', 'true');
+    links.appendChild(ink);
+    const current = links.querySelector('[aria-current="page"]');
+    const moveTo = (a) => {
+      if (!a || !desktop.matches) { ink.style.opacity = '0'; return; }
+      ink.style.left = (a.offsetLeft + 14) + 'px';
+      ink.style.width = Math.max(0, a.offsetWidth - 28) + 'px';
+      ink.style.opacity = '1';
+    };
+    const place = () => { ink.style.transition = 'none'; moveTo(current); ink.getBoundingClientRect(); ink.style.transition = ''; };
+    links.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('mouseenter', () => moveTo(a));
+      a.addEventListener('focus', () => moveTo(a));
+    });
+    links.addEventListener('mouseleave', () => moveTo(current));
+    links.addEventListener('focusout', (e) => { if (!links.contains(e.relatedTarget)) moveTo(current); });
+    window.addEventListener('resize', place);
+    place();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+  }
 })();
 
 /* ---------- Scroll reveal and count-up numbers ---------- */

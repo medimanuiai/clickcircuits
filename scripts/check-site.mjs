@@ -35,7 +35,15 @@ for (const page of pages) {
   // Search engines and browsers pick up the site icon from these links.
   if (!/<link rel="icon" href="\/favicon\.ico"/.test(html)) err(`${page}: missing /favicon.ico icon link`);
   if (!/<link rel="apple-touch-icon" href="\/apple-touch-icon\.png"/.test(html)) err(`${page}: missing apple-touch-icon link`);
+  // A 3D viewer needs its script and the fallback photo it shows if WebGL is unavailable.
+  if (html.includes('data-viewer=')) {
+    if (!/<script src="js\/viewer3d\.js"/.test(html)) err(`${page}: has a 3D viewer but no js/viewer3d.js script`);
+    if (!/class="viewer-fallback"/.test(html)) err(`${page}: 3D viewer has no fallback image`);
+  }
 }
+
+if (!existsSync(join(root, 'js/viewer3d.js'))) err('missing js/viewer3d.js');
+else if (/[—–]/.test(readFileSync(join(root, 'js/viewer3d.js'), 'utf8'))) err('js/viewer3d.js: contains an em or en dash');
 
 // Icon files must exist at the site root (Google looks for a square icon of at least 48x48).
 for (const f of ['favicon.ico', 'favicon.svg', 'favicon-48.png', 'favicon-192.png', 'apple-touch-icon.png', 'site.webmanifest']) {

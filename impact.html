@@ -30,7 +30,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="nav-bar">
-    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="38" height="38"><span>Click Circuits</span></a>
+    <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
     <a class="btn btn--primary btn--sm nav-donate-sm" href="donate.html">Donate</a>
     <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav" aria-label="Main">
@@ -40,6 +40,7 @@
         <a class="btn btn--primary btn--sm" href="donate.html">Donate</a>
       </div>
     </nav>
+    <span class="scroll-progress" aria-hidden="true"></span>
   </div>
 </header>
 <main id="main">
@@ -47,22 +48,22 @@
   <div class="container intro-grid">
     <div>
       <p class="eyebrow">Our impact</p>
-      <h1>Engineering and AI access, measured in students reached.</h1>
+      <h1>Students reached, boards deployed, workshops run.</h1>
       <p class="lead">Every number below is a student who built something with real components.</p>
     </div>
-    <div class="media "><img src="images/work/work-2.jpeg" alt="Six students standing in a garage, each holding an Arduino project they built" width="1600" height="862" fetchpriority="high" decoding="async"></div>
+    <div class="media "><img src="images/work/work-5.jpeg" alt="Students working on laptops and Arduino boards around a table" width="1206" height="689" fetchpriority="high" decoding="async"></div>
   </div>
 </section>
 
 <section class="section section--tight">
   <div class="container reveal">
-    <ul class="impact-row">
+    <ul class="stats">
   <li><span class="stat-num" data-count="232" data-suffix="+">232+</span><span class="stat-label">Students reached</span></li>
   <li><span class="stat-num" data-count="102">102</span><span class="stat-label">Boards deployed</span></li>
   <li><span class="stat-num" data-count="5">5</span><span class="stat-label">Workshops conducted</span></li>
   <li><span class="stat-num" data-count="2">2</span><span class="stat-label">Talks delivered</span></li>
-  <li><span class="stat-num" data-count="2">2</span><span class="stat-label">Countries reached: India and the USA</span></li>
 </ul>
+<p class="reach">Students reached in two countries: <span class="chip">India</span><span class="chip">United States</span></p>
   </div>
 </section>
 
@@ -94,7 +95,7 @@
 </section>
 
 <section class="section" aria-labelledby="start-h">
-  <div class="container split">
+  <div class="container split split--top">
     <div class="reveal">
       <p class="eyebrow">Where it started</p>
       <h2 id="start-h">One student, one circuit at a time.</h2>
@@ -107,8 +108,15 @@
 </section>
 
 <section class="section section--tint" aria-labelledby="grow-h">
-  <div class="container split">
-    <div class="reveal"><div class="media media--4x3"><img src="images/arduino.jpg" alt="An Arduino board, the kind students build with in Click Circuits sessions" width="768" height="566" loading="lazy" decoding="async"></div></div>
+  <div class="container split split--top">
+    <div class="reveal"><div class="viewer" data-viewer="arduino,servo,led" data-start="arduino">
+  <div class="viewer-stage">
+    <img class="viewer-fallback" src="images/arduino.jpg" alt="An Arduino Uno board seen from above" width="768" height="566" loading="lazy" decoding="async">
+    <span class="viewer-hint">Drag to rotate</span>
+  </div>
+  <div class="viewer-tabs" aria-label="Choose a part"></div>
+  <p class="viewer-caption" aria-live="polite">An Arduino Uno. Drag to rotate, and hover over a part to see what it does.</p>
+</div></div>
     <div class="prose reveal">
       <p class="eyebrow">Our growing impact</p>
       <h2 id="grow-h">Real components, lasting skills.</h2>
@@ -122,13 +130,13 @@
 <section class="section" id="gallery" aria-labelledby="gal-h">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">From our sessions</p>
-      <h2 id="gal-h">Proof of the work.</h2>
+      <p class="eyebrow">From our workshops</p>
+      <h2 id="gal-h">Photos from our sessions.</h2>
     </div>
     <div class="gallery">
-  <figure class="g1 reveal"><img src="images/work/work-2.jpeg" alt="Six students standing in a garage, each holding an Arduino project they built" width="1600" height="862" loading="lazy" decoding="async"><figcaption>Students with the Arduino projects they built</figcaption></figure>
-  <figure class="g2 reveal"><img src="images/work/work-4.jpeg" alt="An Arduino board wired to a breadboard with LEDs and resistors" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>LEDs and resistors wired on a breadboard</figcaption></figure>
-  <figure class="g3 reveal"><img src="images/work/work-3.jpeg" alt="Students working on laptops and Arduino circuits around a table" width="1206" height="674" loading="lazy" decoding="async"><figcaption>Coding and wiring together</figcaption></figure>
+  <figure class="g1 reveal"><img src="images/work/work-3.jpeg" alt="Students working on laptops and Arduino circuits around a table" width="1206" height="674" loading="lazy" decoding="async"><figcaption>Coding and wiring side by side</figcaption></figure>
+  <figure class="g2 reveal"><img src="images/work/work-4.jpeg" alt="An Arduino board wired to a breadboard with LEDs and resistors" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>LEDs and resistors on a breadboard</figcaption></figure>
+  <figure class="g3 reveal"><img src="images/work/work-2.jpeg" alt="Six students in a garage, each holding an Arduino project they built" width="1600" height="862" loading="lazy" decoding="async"><figcaption>The Arduino projects students built</figcaption></figure>
 </div>
   </div>
 </section>
@@ -146,7 +154,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="38" height="38"><span>Click Circuits</span></a>
+      <a class="brand" href="index.html"><img src="images/logo-mark.svg" alt="" width="36" height="36"><span>Click Circuits</span></a>
       <p>Hands-on engineering, electronics, robotics, and AI education for students in India and the United States.</p>
     </div>
     <div>
@@ -178,5 +186,6 @@
   </div>
 </footer>
 <script src="js/main.js"></script>
+<script src="js/viewer3d.js" defer></script>
 </body>
 </html>
