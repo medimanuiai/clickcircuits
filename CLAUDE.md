@@ -14,6 +14,8 @@ Static site (HTML/CSS/JS, no build step) for https://clickcircuits.org, hosted o
 - Plain HTML/CSS/JS only; no build tooling unless the owner approves.
 - The header and footer are repeated in every page. Change them in all nine pages together.
 - Events live in one place: the `EVENTS` list in `js/main.js`. The contact email is `CONTACT_EMAIL` in the same file; it also appears in the HTML mailto links.
-- Design tokens (colors, fonts, radii, spacing) are the CSS variables at the top of `css/styles.css`. Fonts are Manrope and Inter from Google Fonts.
+- Design tokens (colors, fonts, radii, spacing) are the CSS variables at the top of `css/styles.css`. The brand color is Azure `#0A7CFF` (`--azure`); white text on it is only 3.9:1, so small text on blue sits on `--azure-strong` (`#0A6AE6`). Fonts are Outfit and Inter from Google Fonts.
+- The logo is the click-cursor mark: `images/logo-mark.svg` (header, footer) and `favicon.svg` (round badge). Browser-tab and search-result icons are `favicon.ico`, `favicon-48.png`, `favicon-192.png`, `apple-touch-icon.png` in the site root, linked from every page head. Search engines need the icon files at the root, at least 48x48, so do not move them.
+- Photos are lightly enhanced (denoise, sharpen, tone) and saved at high JPEG quality. Keep the same file names so live URLs keep working.
 - Do not use em dashes or en dashes anywhere on the site. `scripts/check-site.mjs` fails if it finds one.
 - Do not add claims the owner has not confirmed (nonprofit status, partner names, testimonials, events, metrics).

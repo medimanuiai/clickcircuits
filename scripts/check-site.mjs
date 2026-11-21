@@ -32,6 +32,14 @@ for (const page of pages) {
   }
   const h1s = (html.match(/<h1\b/g) || []).length;
   if (h1s !== 1) err(`${page}: expected exactly one <h1>, found ${h1s}`);
+  // Search engines and browsers pick up the site icon from these links.
+  if (!/<link rel="icon" href="\/favicon\.ico"/.test(html)) err(`${page}: missing /favicon.ico icon link`);
+  if (!/<link rel="apple-touch-icon" href="\/apple-touch-icon\.png"/.test(html)) err(`${page}: missing apple-touch-icon link`);
+}
+
+// Icon files must exist at the site root (Google looks for a square icon of at least 48x48).
+for (const f of ['favicon.ico', 'favicon.svg', 'favicon-48.png', 'favicon-192.png', 'apple-touch-icon.png', 'site.webmanifest']) {
+  if (!existsSync(join(root, f))) err(`missing icon file ${f}`);
 }
 
 // Every page should be listed in sitemap.xml.

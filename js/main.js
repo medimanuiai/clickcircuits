@@ -132,7 +132,7 @@ function setupVideoPlayer({ videos, idPrefix }) {
   if (thumbs) {
     thumbs.innerHTML = videos.map((v, i) =>
       `<button type="button" class="video-thumb" aria-label="Play video ${i + 1} of ${videos.length}">` +
-      `<img src="${v.poster}" alt="" width="56" height="100" loading="lazy"></button>`
+      `<img src="${(v.poster || '').replace(/\.jpg$/, '-sm.jpg')}" alt="" width="56" height="100" loading="lazy"></button>`
     ).join('');
     thumbs.querySelectorAll('button').forEach((b, i) => b.addEventListener('click', () => load(i, true)));
   }
